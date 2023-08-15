@@ -42,19 +42,33 @@ $(document).ready(function(e){
     });
     $('#create').click(function(e){
         e.preventDefault();
+        console.log(members);
         let name = $('#name').val();
         if(name == '' || name == 'Room Name'){
             $('#error').css('display','block');
             $('#error').text('Invalid room name');
         }
-        else if(members.length != 2){
+        else if(members.length < 2){
             $('#error').css('display','block');
             $('#error').text('atleast two members should be chosen');
         }
         else{
             $('#error').css('display','none');
-            console.log(name);
-            console.log(members);
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {
+                    'csrfmiddlewaretoken':csrf_token,
+                    'name': name,
+                    'members':members
+                },
+                success: function(response) {
+                    window.location.href = index;
+                },
+                error: function (response){
+                    console.log("Something went wrong");
+                }
+            });
         }
     });
 })

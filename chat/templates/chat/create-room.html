@@ -3,6 +3,7 @@
   WhatsApp - Create Room
 {% endblock  %}
 {% block content %}
+{% csrf_token %}
   <div class="form-room">
     <center><h1>New Room</h1></center>
     <input type="text" name="name" id="name" placeholder="Room Name"><br>
@@ -22,6 +23,9 @@
   </div>
   <center id="error"></center>
   <script>
+    var csrf_token = $('input[name="csrfmiddlewaretoken"]').val();
     var creator = "{{request.user.username}}";
+    var url = "{% url 'create-room' %}";
+    var index = "{% url 'home' %}";
   </script>
 {% endblock  %}

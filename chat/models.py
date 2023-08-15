@@ -12,7 +12,7 @@ class Rooms(models.Model):
         return self.Room_name
     
     def get_members(self):
-        ''.join([i.username for i in self.members.all()])
+        return ', '.join([str(p.username) for p in self.members.all()])
 
 class Message(models.Model):
     author = models.ForeignKey(User, related_name='author_message', on_delete=models.CASCADE)
