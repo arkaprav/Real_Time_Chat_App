@@ -1,0 +1,27 @@
+{% extends "chat/base.html" %}
+{% block title %}
+  WhatsApp - Create Room
+{% endblock  %}
+{% block content %}
+  <div class="form-room">
+    <center><h1>New Room</h1></center>
+    <input type="text" name="name" id="name" placeholder="Room Name"><br>
+    <div class="members" id="members">{{request.user.username}}</div>
+    <div class="options">
+      {% if users %}
+      {% for i in users %}
+          {% if i != request.user.username %}
+            <div>{{i}}</div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <div>No users right now</div>
+      {% endif %}
+    </div>  
+    <input type="submit" value="Create Room" id="create">
+  </div>
+  <center id="error"></center>
+  <script>
+    var creator = "{{request.user.username}}";
+  </script>
+{% endblock  %}

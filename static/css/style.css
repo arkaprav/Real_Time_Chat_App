@@ -1,0 +1,110 @@
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+nav .left{
+    margin-left: 100px;
+    color: skyblue;
+    font-size:  30px;
+}
+
+nav .left h1{
+    margin: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color: #63a6c2b3;
+}
+
+nav .right{
+    margin-right: 100px;
+    margin-top:12px;
+    display: flex;
+}
+button{
+    background-color: skyblue;
+    padding: 12px 25px;
+    color: whitesmoke;
+    border: 1px solid skyblue;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px #b9b9b9;
+    cursor: pointer;
+}
+
+nav .right button {
+    font-size: 14px;
+    margin-right: 10px;
+    max-height: 40px;
+    margin: 15px 50px;
+}
+
+.fa-user-circle-o{
+    font-size: 39px !important;
+    color: skyblue;
+    margin: 16px 10px;
+}
+
+.form-room{
+    background-color: skyblue;
+    max-width: 25%;
+    margin: 50px auto;
+    display: block;
+    padding: 10px 30px;
+    border: 1px solid skyblue;
+    border-radius: 40px;
+}
+.form-room  h1{
+    color: white;
+}
+
+.form-room input,
+.members{
+    width: 94%;
+    padding:10px 10px !important;
+    margin: 10px 0px;
+    border: 1px solid white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.form-room input[type=submit]{
+    width: 100% !important;
+    background-color: black !important;
+    border: 1px solid skyblue;
+    color: white;
+}
+.options{
+    display: none;
+    position: absolute;
+    top: 345px;
+    padding: 10px 20px;
+    background-color: white;
+    width: 339px;
+    max-height: 130px;
+    overflow-y: scroll;
+}
+.options div{
+    padding: 10px 20px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all .5s;
+}
+.members {
+    background-color: white;
+    color: rgb(95, 95, 95);
+}
+span#close{
+    font-size: 18px;
+    float: right;
+    cursor:pointer;
+}
+#error{
+    display: none;
+    color: red;
+}
