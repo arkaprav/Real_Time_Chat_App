@@ -108,3 +108,51 @@ span#close{
     display: none;
     color: red;
 }
+.container{
+    margin:30px auto;
+    width:80%;
+    display:flex;
+    justify-content: center;
+}
+#room {
+    display: block;
+    text-align:center;
+    font-size: 30px;
+    border: 1px solid skyblue;
+    border-radius: 30px;
+    padding:0px 30px;
+}
+p.name{
+    margin: 20px 0px;
+}
+button.link{
+    width: 200px;
+    margin-bottom: 20px;
+}
+.contain-chat {
+    margin: 10px auto;
+    width: 40%;
+    padding: 10px 30px;
+    border: 3px solid skyblue;
+    border-radius: 30px;
+}
+input#chat-message-input{
+    width: 83.5%;
+    padding: 10px;
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 20px;
+}
+input#chat-message-submit{
+    padding: 10px;
+    border: 1px solid skyblue;
+    border-radius: 20px;
+    background-color: skyblue;
+    color: white;
+    width: 70px;
+    cursor: pointer;
+}
+div#chat-log{
+    min-height: 500px;
+    max-height: 500px;
+    overflow-y: auto;
+}

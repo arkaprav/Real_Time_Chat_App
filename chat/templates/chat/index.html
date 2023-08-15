@@ -5,5 +5,19 @@
 {% endblock %}
 
 {% block content %}
-  this is index page
+  <div class="rooms">
+    <center><h3>Your Rooms</h3></center>
+    <div class="container">
+      {% if rooms %}
+        {% for room in rooms %}
+          <div id="room">
+            <p class="name">{{room.Room_name}}</p>
+            <a href="{% url 'chat' room.slug %}"><button class="link">Enter</button></a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <center><p>No Rooms joined or created yet</p></center>
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}

@@ -1,0 +1,16 @@
+{% extends "chat/base.html" %}
+{% block title %}
+  Whatsapp - {{room.Room_name}}
+{% endblock %}
+{% block content %}
+{% load static %}
+  <center><h2>Welcome to {{room.Room_name}}</h2></center>
+  <div class="contain-chat">
+    <div id="chat-log"></div><br>
+    <input id="chat-message-input" type="text" size="100">
+    <input id="chat-message-submit" type="button" value="Send">
+    {{ room.slug|json_script:"room-name" }}
+  </div>
+  <script src="{% static 'js/reconnecting-websocket.js' %}"></script>
+  <script src="{% static 'js/chat.js' %}"></script>
+{% endblock %}
