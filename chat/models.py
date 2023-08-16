@@ -23,8 +23,9 @@ class Message(models.Model):
     def __str__(self) -> str:
         return self.author.username
     
-    def last_10_messages():
-        message = Message.objects.order_by('timestamp').all()
+    def last_10_messages(slug):
+        room = Rooms.objects.get(slug = slug)
+        message = Message.objects.filter(room = room).order_by('timestamp').all()
         if len(message) > 10:
             return message[len(message)-10:]
         else:

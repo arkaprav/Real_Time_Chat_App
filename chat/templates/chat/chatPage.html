@@ -12,5 +12,8 @@
     {{ room.slug|json_script:"room-name" }}
   </div>
   <script src="{% static 'js/reconnecting-websocket.js' %}"></script>
+  <script>
+    var username = "{{request.user.username}}"
+  </script>
   <script src="{% static 'js/chat.js' %}"></script>
 {% endblock %}
