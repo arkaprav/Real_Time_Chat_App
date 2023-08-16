@@ -90,10 +90,10 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sql6640268',
-        'USER': 'sql6640268',
-        'PASSWORD': 'Sz3EgJdUQC',
-        'HOST': 'sql6.freemysqlhosting.net',
+        'NAME': 'whatsapp',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
     }
