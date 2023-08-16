@@ -220,6 +220,15 @@ input#chat-message-input:focus{
     outline: 1px solid white !important;
 }
 
-div#chat-log ::-webkit-scrollbar{
+.date{
+    margin: 0px auto;
     background-color: black;
+    min-width: 100px;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px !important;
+}
+.date p{
+    padding: 8px !important;
+    margin: 0px !important;
 }

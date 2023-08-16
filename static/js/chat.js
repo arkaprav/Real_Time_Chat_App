@@ -1,5 +1,6 @@
 const roomName = JSON.parse($('#room-name').text());
 var prevMsgUser = '';
+var prevDate = '';
 const socket = new ReconnectingWebSocket(
     'ws://'
     +window.location.host
@@ -73,5 +74,31 @@ function CreateMessage(message){
         }
         div.className= 'reply';
     }
+    let date = getdate(time); 
+    if(prevDate != date){
+        let div = document.createElement('div');
+        let p = document.createElement('p');
+        p.textContent = date;
+        div.className = 'date';
+        div.appendChild(p);
+        document.querySelector('#chat-log').appendChild(div)
+        prevDate = date;
+    }
     document.querySelector('#chat-log').appendChild(div);
+}
+function getdate(date){
+    let dd = Date.now();
+    dd = new Date(dd);
+    let flag = true;
+    if(dd.getFullYear() == date.getFullYear()){
+        if(dd.getMonth() == date.getMonth()){
+            if(dd.getDate() == date.getDate()){
+                flag = false;
+                return 'Today';
+            }
+        }
+    }
+    if(flag == true){
+        return date.getFullYear()+'/'+data.getMonth()+'/'+data.getDate();
+    }
 }
