@@ -22,6 +22,9 @@ a:hover{
     color: #63a6c2b3;
 }
 
+.rooms h3{
+    font-size: 30px;
+}
 nav .right{
     margin-right: 100px;
     margin-top:12px;
@@ -35,6 +38,10 @@ button{
     border-radius: 20px;
     box-shadow: 3px 3px 3px #b9b9b9;
     cursor: pointer;
+}
+
+button:hover{
+    box-shadow:0px 0px 0px;
 }
 
 nav .right button {
@@ -110,9 +117,10 @@ span#close{
 }
 .container{
     margin:30px auto;
-    width:80%;
+    width:60%;
     display:flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 #room {
     display: block;
@@ -121,6 +129,8 @@ span#close{
     border: 1px solid skyblue;
     border-radius: 30px;
     padding:0px 30px;
+    margin: 10px 20px;
+    flex: 0 0 20%;
 }
 p.name{
     margin: 20px 0px;
@@ -163,9 +173,14 @@ div#chat-log div{
     min-width: 70px;
     border-radius: 20px;
 }
+div#chat-log div span{
+    margin-left: 17px;
+    font-size: 10px;
+    color: #bfbfbf;
+}
 .send{
     background-color: #207c40;
-    padding:5px;
+    padding:7px;
     border: 1px solid #207c40;
     border-top-right-radius: 0px !important;
     text-align: left;
@@ -174,13 +189,11 @@ div#chat-log div{
     margin-left: auto;
 }
 .send p{
-    margin: 0px;
-    margin-left: 15px;
+    margin: 0px 10px;
     padding: 0px;
     color: white;
 }
 .reply{
-    justify-content: left;
     background-color: #535353;
     padding:5px;
     border: 1px solid #535353;
@@ -193,12 +206,20 @@ div#chat-log div{
 .reply h4{
     margin: 0px 15px;
     color: #f76100;
-    text-align: right;
+    text-align: left;
 }
 
 .reply p{
     margin: 0px 15px;
     margin-bottom: 5px !important;
     color: white;
-    text-align: right;
+    text-align: left;
+}
+
+input#chat-message-input:focus{
+    outline: 1px solid white !important;
+}
+
+div#chat-log ::-webkit-scrollbar{
+    background-color: black;
 }

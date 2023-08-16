@@ -46,8 +46,17 @@ function CreateMessage(message){
     let div = document.createElement('div');
     let h4 = document.createElement('h4');
     let p = document.createElement('p');
+    let span = document.createElement('span');
     h4.textContent = message['author'];
     p.textContent = message['content'];
+    let time = new Date(message['timestamp']);
+    let hr = time.getHours();
+    let mm = time.getMinutes();
+    if(parseInt(mm) < 10){
+        mm = '0'+mm;
+    }
+    span.textContent = hr +':' +mm;
+    p.append(span);
     if(message['author'] == username){
         div.appendChild(p);
         div.className = 'send';
@@ -65,5 +74,4 @@ function CreateMessage(message){
         div.className= 'reply';
     }
     document.querySelector('#chat-log').appendChild(div);
-    console.log(prevMsgUser)
 }
