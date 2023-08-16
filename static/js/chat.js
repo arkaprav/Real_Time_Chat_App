@@ -99,6 +99,6 @@ function getdate(date){
         }
     }
     if(flag == true){
-        return date.getFullYear()+'/'+data.getMonth()+'/'+data.getDate();
+        return date.getFullYear()+'/'+date.getMonth()+'/'+date.getDate();
     }
 }
